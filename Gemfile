@@ -19,6 +19,10 @@ gem 'puma', '>= 5.0'
 
 gem 'rollbar'
 
+gem 'omniauth-github'
+
+gem 'omniauth-rails_csrf_protection'
+
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem 'jsbundling-rails'
 
