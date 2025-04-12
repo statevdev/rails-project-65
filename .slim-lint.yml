@@ -1,0 +1,11 @@
+linters:
+  LineLength:
+    enabled: false
+  TrailingWhitespace:
+    enabled: false
+  TrailingBlankLines:
+    enabled: false
+  RuboCop:
+    enabled: false
+  EmptyLines:
+    enabled: false
