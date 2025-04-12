@@ -10,3 +10,5 @@ lint:
 	bundle exec slim-lint app/views/
 tests:
 	bin/rails test
+github_env:
+	cp -n .env.example .env || exit 0
