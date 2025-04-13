@@ -1,10 +1,13 @@
-.container.content style='margin-top: 100px; word-wrap: break-word;'
+.container.content style='word-wrap: break-word;'
   .border style='border: 1px solid #ccc; border-radius: 10px; padding: 10px; margin-bottom: 20px;'
     ol.breadcrumb
       li.breadcrumb-item
-        = link_to 'All', bulletins_path
+        = link_to t('bulletins.show.all'), bulletins_path
       li.breadcrumb-item.active
-        = t("bulletins.categories.#{@bulletin.category.name}")
+        = @bulletin.category.name
 
     h1 = @bulletin.title
     p = simple_format(@bulletin.description)
+
+    - if @bulletin.image_attachment
+      = image_tag(@bulletin.image, class: 'img-fluid')

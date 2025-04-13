@@ -1,8 +1,7 @@
 doctype html
 html
   head
-    title
-      | RailsProject65
+    title = t('shared._nav.app')
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
@@ -15,7 +14,7 @@ html
     .flash-messages.mt-5
       - flash.each do |type, message|
         - alert_class = { notice: 'alert-success', alert: 'alert-danger' }[type.to_sym] || 'alert-info'
-        .alert class=alert_class style='margin-top: 60px;' = message
+        .container.alert class=alert_class style='margin-top: 70px;' = message
     - # rubocop:enable Performance/CollectionLiteralInLoop
 
-    = yield
+    .container style='margin-top: 100px;' = yield

@@ -1,0 +1,15 @@
+ru:
+  shared:
+    _nav:
+      app: Доска Объявлений
+      links:
+        create_bulletin: Создать объявление
+        sign_out: Выйти
+        sign_in: Войти
+  auth:
+    sign_in: Вы вошли в свой аккаунт.
+    sign_out: Вы вышли из аккаунта.
+    not_auth: Пожалуйста, войдите в свой аккаунт.
+  bulletins:
+    show:
+      all: Все объявления
