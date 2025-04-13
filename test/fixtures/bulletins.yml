@@ -1,9 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   title: MyString
-#   description: MyText
+one:
+  title: <%= Faker::Lorem.sentence %>
+  description: <%= Faker::Lorem.paragraphs(number: 5) %>
+  user: user_one
+  category: one
 
-# two:
-#   title: MyString
-#   description: MyText
+two:
+  title: <%= Faker::Lorem.sentence %>
+  description: <%= Faker::Lorem.paragraphs(number: 5) %>
+  user: user_one
+  category: two

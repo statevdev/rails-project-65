@@ -15,7 +15,7 @@ html
     .flash-messages.mt-5
       - flash.each do |type, message|
         - alert_class = { notice: 'alert-success', alert: 'alert-danger' }[type.to_sym] || 'alert-info'
-        .alert class=alert_class = message
+        .alert class=alert_class style='margin-top: 60px;' = message
     - # rubocop:enable Performance/CollectionLiteralInLoop
 
     = yield

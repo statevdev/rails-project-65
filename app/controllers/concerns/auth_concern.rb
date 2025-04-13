@@ -3,8 +3,15 @@
 module AuthConcern
   extend ActiveSupport::Concern
 
+  def authenticate_user!
+    return if signed_in?
+
+    flash[:alert] = t('hello')
+    redirect_to root_path
+  end
+
   def sign_in(user)
-    session[:user_id] = user.id
+    session[:user_id] = user&.id
   end
 
   def sign_out
