@@ -8,6 +8,11 @@ Rails.application.routes.draw do
     get 'auth/:provider/callback', to: 'auth#callback', as: :callback_auth
     delete 'auth/destroy', to: 'auth#destroy', as: :sign_out
 
-    resources :bulletins
+    resources :bulletins, only: %i[index show new create]
+
+    namespace :admin do
+      resources :categories
+      resources :bulletins
+    end
   end
 end

@@ -3,7 +3,7 @@
 module AuthConcern
   extend ActiveSupport::Concern
 
-  def authenticate_user!
+  def user_not_authorized
     return if signed_in?
 
     flash[:alert] = t('auth.not_auth')
