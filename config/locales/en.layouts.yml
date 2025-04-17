@@ -1,0 +1,12 @@
+en:
+  layouts:
+    web:
+      application:
+        title: Bulletin Board
+      shared:
+        nav:
+          title: Bulletin Board
+          home: Home
+          create_bulletin: Create bulletin
+          sign_out: Sign out
+          sign_in: Sign in

@@ -1,11 +1,4 @@
 en:
-  shared:
-    _nav:
-      app: Bulletin Board
-      links:
-        create_bulletin: Create bulletin
-        sign_out: Sign out
-        sign_in: Sign in
   auth:
     sign_in: Signed in successfully!
     sign_out: Signed out successfully!

@@ -1,0 +1,12 @@
+ru:
+  layouts:
+    web:
+      application:
+        title: Доска объявлений
+      shared:
+        nav:
+          title: Доска объявлений
+          home: Главная
+          create_bulletin: Создать объявление
+          sign_out: Выйти
+          sign_in: Войти
