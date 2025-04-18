@@ -4,6 +4,4 @@ en:
     sign_out: Signed out successfully!
     not_auth: Please, sign in.
   bulletins:
-    show:
-      all: All
     create: Success!

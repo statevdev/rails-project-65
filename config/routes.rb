@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
       resources :categories
-      resources :bulletins
+      resources :bulletins, only: %i[index show destroy]
     end
   end
 end

@@ -2,7 +2,7 @@
   .border style='border: 1px solid #ccc; border-radius: 10px; padding: 10px; margin-bottom: 20px;'
     ol.breadcrumb
       li.breadcrumb-item
-        = link_to t('bulletins.show.all'), bulletins_path
+        = link_to t('.all'), bulletins_path
       li.breadcrumb-item.active
         = @bulletin.category.name
 

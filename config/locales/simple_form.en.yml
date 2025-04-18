@@ -8,7 +8,8 @@ en:
     error_notification:
       default_message: "Please review the problems below:"
     buttons:
-      new_bulletin: Create bulletin
+      bulletin:
+        new: Create bulletin
     # Examples
     # labels:
     #   defaults:

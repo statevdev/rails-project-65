@@ -10,6 +10,9 @@ ru:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Пожалуйста, взгляните на проблемы ниже."
+    buttons:
+      bulletin:
+        new: Создать объявление
     # Examples
     # labels:
     #   defaults:
