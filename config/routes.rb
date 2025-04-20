@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :bulletins, only: %i[index show new create]
 
     namespace :admin do
+      root 'bulletins#index'
       resources :categories
       resources :bulletins, only: %i[index show destroy]
     end

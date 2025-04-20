@@ -3,11 +3,11 @@
 one:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
-  user: user_one
+  user: admin
   category: one
 
 two:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
-  user: user_one
+  user: admin
   category: two
