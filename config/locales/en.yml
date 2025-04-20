@@ -5,3 +5,5 @@ en:
     not_auth: Please, sign in.
   bulletins:
     create: Success!
+  categories:
+    fail: Failure

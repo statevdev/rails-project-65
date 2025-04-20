@@ -4,7 +4,7 @@ ul.nav.nav-tabs.mb-3
       class: "nav-link #{'active' if current_page?(admin_root_path)}"
   li.nav-item
     = link_to t('titles.all_bulletins'), admin_bulletins_path,
-      class: "nav-link #{'active' if current_page?(admin_bulletins_path)}"
+      class: "nav-link #{'active' if request.path.start_with?('/admin/bulletins')}"
   li.nav-item
     = link_to t('titles.categories'), admin_categories_path,
-      class: "nav-link #{'active' if current_page?(admin_categories_path)}"
+      class: "nav-link #{'active' if request.path.start_with?('/admin/categories')}"
