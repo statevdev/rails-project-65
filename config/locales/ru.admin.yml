@@ -3,4 +3,15 @@ ru:
     admin:
       bulletins:
         index:
-          bulletins: Объявления
+          title: Объявления
+          show: Показать
+      categories:
+        index:
+          title: Категории
+          new: Добавить категорию
+          edit: Редактировать
+          destroy: Удалить
+        edit:
+          edit: Редактировать категорию
+        new:
+          new: Новая категория

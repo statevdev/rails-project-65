@@ -11,3 +11,11 @@ ru:
           sign_out: Выйти
           sign_in: Войти
           admin: Админка
+      admin:
+        application:
+          title: Доска объявлений
+        shared:
+          nav:
+            bulletins_under_moderation: Объявления на модерации
+            all_bulletins: Все объявления
+            categories: Категории

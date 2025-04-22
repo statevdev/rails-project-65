@@ -5,3 +5,8 @@ admin:
   email: statev.dev@gmail.com
   admin: true
 
+user:
+  name: User Userovich
+  email: user@example.com
+  admin: false
+

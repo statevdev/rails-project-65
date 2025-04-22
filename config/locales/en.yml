@@ -1,9 +1,5 @@
 en:
-  auth:
-    sign_in: Signed in successfully!
-    sign_out: Signed out successfully!
-    not_auth: Please, sign in.
-  bulletins:
-    create: Success!
-  categories:
-    fail: Failure
+  success: Success!
+  destroy_confirmation: Are you sure?
+  edit: Edit
+  destroy: Destroy

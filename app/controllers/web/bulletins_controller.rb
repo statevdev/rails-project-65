@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Web::BulletinsController < Web::ApplicationController
+  before_action :user_not_authorized, only: %i[ new create ]
+
   def index
     @bulletins = Bulletin.includes(:category, :user).order(created_at: :desc)
     authorize @bulletins
@@ -21,7 +23,7 @@ class Web::BulletinsController < Web::ApplicationController
     authorize @bulletin
 
     if @bulletin.save
-      redirect_to @bulletin, notice: t('bulletins.create')
+      redirect_to @bulletin, notice: t('success')
     else
       render :new, status: :unprocessable_entity
     end

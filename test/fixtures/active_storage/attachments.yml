@@ -1,0 +1,39 @@
+blue_bike:
+  name: image
+  record: blue_bike (Bulletin)
+  blob: blue_bike_blob
+
+dentist:
+  name: image
+  record: dentist (Bulletin)
+  blob: dentist_blob
+
+editor:
+  name: image
+  record: editor (Bulletin)
+  blob: editor_blob
+
+fennec:
+  name: image
+  record: fennec (Bulletin)
+  blob: fennec_blob
+
+panda:
+  name: image
+  record: panda (Bulletin)
+  blob: panda_blob
+
+red_bike:
+  name: image
+  record: red_bike (Bulletin)
+  blob: red_bike_blob
+
+red_bus:
+  name: image
+  record: red_bus (Bulletin)
+  blob: red_bus_blob
+
+soviet_bus:
+  name: image
+  record: soviet_bus (Bulletin)
+  blob: soviet_bus_blob

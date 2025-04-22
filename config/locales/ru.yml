@@ -1,8 +1,10 @@
 ru:
-  auth:
-    sign_in: Вы вошли в свой аккаунт.
-    sign_out: Вы вышли из аккаунта.
-    not_auth: Пожалуйста, войдите в свой аккаунт.
-  bulletins:
-    show:
-      all: Все объявления
+  success: Успешно!
+  categories:
+    fail: Ошибка.
+    destroy_has_bulletins: Эта категория имеет существующие объявления.
+    update: Успешно обновлено!
+
+  destroy_confirmation: Вы уверены?
+  edit: Редактировать
+  destroy: Удалить

@@ -3,4 +3,23 @@ en:
     admin:
       bulletins:
         index:
-          bulletins: Bulletins
+          title: Bulletins
+          show: Show
+      categories:
+        index:
+          title: Categories
+          new: Add category
+          edit: Edit
+          destroy: Destroy
+        edit:
+          edit: Edit the category
+        new:
+          new: New category
+        create:
+          fail: Failed to create a category.
+        destroy:
+          destroy_has_bulletins: This category has related bulletins.
+          destroyed: The category has been successfully deleted.
+        update:
+          updated: Successfully updated!
+          fail: Failed to update the category.

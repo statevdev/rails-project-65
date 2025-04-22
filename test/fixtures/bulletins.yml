@@ -1,13 +1,49 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+blue_bike:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
-  user: admin
-  category: one
+  user: user
+  category: items
 
-two:
+dentist:
+  title: <%= Faker::Lorem.sentence %>
+  description: <%= Faker::Lorem.paragraphs(number: 5) %>
+  user: user
+  category: jobs
+
+fennec:
+  title: <%= Faker::Lorem.sentence %>
+  description: <%= Faker::Lorem.paragraphs(number: 5) %>
+  user: user
+  category: animals
+
+editor:
+  title: <%= Faker::Lorem.sentence %>
+  description: <%= Faker::Lorem.paragraphs(number: 5) %>
+  user: user
+  category: jobs
+
+panda:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: admin
-  category: two
+  category: animals
+
+red_bike:
+  title: <%= Faker::Lorem.sentence %>
+  description: <%= Faker::Lorem.paragraphs(number: 5) %>
+  user: admin
+  category: items
+
+red_bus:
+  title: <%= Faker::Lorem.sentence %>
+  description: <%= Faker::Lorem.paragraphs(number: 5) %>
+  user: admin
+  category: transports
+
+soviet_bus:
+  title: <%= Faker::Lorem.sentence %>
+  description: <%= Faker::Lorem.paragraphs(number: 5) %>
+  user: admin
+  category: transports

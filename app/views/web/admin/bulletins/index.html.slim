@@ -1,5 +1,5 @@
 = content_for :title do
-  = t('.bulletins')
+  = t('.title')
 
 table.table.table-striped.table-hover.mb-5
   thead
@@ -14,5 +14,7 @@ table.table.table-striped.table-hover.mb-5
         th{ scope = 'row' } = i + 1
         td = bulletin.title
         td.d-flex
-          = link_to t('show'), bulletin, class: 'me-4'
-          = link_to t('destroy'), admin_bulletin_path(bulletin), data: { turbo_method: :delete, turbo_confirm: t('destroy_confirmation') }, class: 'link-danger'
+          = link_to t('.show'), bulletin, class: 'me-4'
+          = link_to t('destroy'), admin_bulletin_path(bulletin),
+            data: { turbo_method: :delete, turbo_confirm: t('destroy_confirmation') },
+            class: 'link-danger'

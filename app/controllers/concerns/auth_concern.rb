@@ -6,7 +6,7 @@ module AuthConcern
   def user_not_authorized
     return if signed_in?
 
-    flash[:alert] = t('auth.not_auth')
+    flash[:alert] = t('not_auth')
     redirect_to root_path
   end
 

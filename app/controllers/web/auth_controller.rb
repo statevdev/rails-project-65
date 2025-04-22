@@ -12,12 +12,12 @@ module Web
 
       sign_in @user
 
-      redirect_to root_path, notice: t('auth.sign_in')
+      redirect_to root_path, notice: t('sign_in')
     end
 
     def destroy
       sign_out
-      redirect_to root_path, notice: t('auth.sign_out')
+      redirect_to root_path, notice: t('sign_out')
     end
   end
 end

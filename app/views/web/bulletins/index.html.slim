@@ -1,3 +1,6 @@
+= content_for :title do
+  = t('.title')
+  
 .container.content style='word-wrap: break-word;'
   - @bulletins.each do |bulletin|
     .border style='border: 1px solid #ccc; border-radius: 10px; padding: 10px; margin-bottom: 20px;'

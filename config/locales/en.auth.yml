@@ -1,0 +1,4 @@
+en:
+  sign_in: Signed in successfully!
+  sign_out: Signed out successfully!
+  not_auth: Please, sign in.

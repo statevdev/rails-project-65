@@ -1,0 +1,8 @@
+blue_bike_blob: <%= ActiveStorage::FixtureSet.blob filename: 'blue_bike.jpeg' %>
+dentist_blob: <%= ActiveStorage::FixtureSet.blob filename: 'dentist.jpeg' %>
+editor_blob: <%= ActiveStorage::FixtureSet.blob filename: 'editor.jpeg' %>
+fennec_blob: <%= ActiveStorage::FixtureSet.blob filename: 'fennec.jpeg' %>
+panda_blob: <%= ActiveStorage::FixtureSet.blob filename: 'panda.jpeg' %>
+red_bike_blob: <%= ActiveStorage::FixtureSet.blob filename: 'red_bike.jpeg' %>
+red_bus_blob: <%= ActiveStorage::FixtureSet.blob filename: 'red_bus.jpeg' %>
+soviet_bus_blob: <%= ActiveStorage::FixtureSet.blob filename: 'soviet_bus.jpeg' %>

@@ -3,3 +3,7 @@ en:
     bulletins:
       show:
         all: All
+      index:
+        title: Bulletins
+      new:
+        title: Add bulletin

@@ -16,9 +16,9 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
     authorize [:admin, @category]
 
     if @category.save
-      redirect_to [:admin, @category], notice: t('categories.create')
+      redirect_to [:admin, :categories], notice: t('success')
     else
-      flash[:alert] = t('fail')
+      flash[:alert] = t('.fail')
       render :new, status: :unprocessable_entity
     end
   end
@@ -27,7 +27,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
 
   def update
     if @category.update(categories_params)
-      redirect_to [:admin, @category], notice: t('categories.update')
+      redirect_to [:admin, :categories], notice: t('.updated')
     else
       flash[:alert] = t('fail')
       render :edit, status: :unprocessable_entity
@@ -36,10 +36,11 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
 
   def destroy
     if @category.bulletins.exists?
-      flash[:alert] = t('categories.destroy_has_bulletins')
+      flash[:alert] = t('.destroy_has_bulletins')
       redirect_to [:admin, @category]
     else
       @category.destroy!
+      flash[:notice] = t('.destroyed')
       redirect_to [:admin, @category]
     end
   end
