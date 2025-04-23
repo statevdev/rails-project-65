@@ -50,3 +50,6 @@ Style/IfUnlessModifier:
 
 Style/FrozenStringLiteralComment:
   Enabled: true
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false

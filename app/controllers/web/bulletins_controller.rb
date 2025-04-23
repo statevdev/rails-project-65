@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Web::BulletinsController < Web::ApplicationController
-  before_action :user_not_authorized, only: %i[ new create ]
-
   def index
     @bulletins = Bulletin.includes(:category, :user).order(created_at: :desc)
     authorize @bulletins
@@ -19,8 +17,8 @@ class Web::BulletinsController < Web::ApplicationController
   end
 
   def create
-    @bulletin = current_user.bulletins.build(bulletins_params)
-    authorize @bulletin
+    @bulletin = current_user.bulletins.build(bulletins_params) if current_user
+    authorize Bulletin
 
     if @bulletin.save
       redirect_to @bulletin, notice: t('success')

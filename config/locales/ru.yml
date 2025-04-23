@@ -1,10 +1,6 @@
 ru:
   success: Успешно!
-  categories:
-    fail: Ошибка.
-    destroy_has_bulletins: Эта категория имеет существующие объявления.
-    update: Успешно обновлено!
-
   destroy_confirmation: Вы уверены?
+  show: Показать
   edit: Редактировать
   destroy: Удалить

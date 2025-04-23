@@ -4,14 +4,21 @@ ru:
       bulletins:
         index:
           title: Объявления
-          show: Показать
+        destroy:
+          destroyed: Объявление успешно удалено.
       categories:
         index:
           title: Категории
           new: Добавить категорию
-          edit: Редактировать
-          destroy: Удалить
         edit:
           edit: Редактировать категорию
         new:
           new: Новая категория
+        create:
+          fail: Ошибка при создании категории.
+        destroy:
+          destroy_has_bulletins: Эта категория имеет связанные объявления.
+          destroyed: Категория успешно удалена.
+        update:
+          updated: Успешно обновлено!
+          fail: Ошибка при обновлении категории.

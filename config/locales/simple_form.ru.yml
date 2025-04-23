@@ -13,6 +13,9 @@ ru:
     buttons:
       bulletin:
         new: Создать объявление
+      category:
+        new: Создать категорию
+        update: Обновить категорию
     # Examples
     # labels:
     #   defaults:

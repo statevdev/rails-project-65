@@ -4,13 +4,12 @@ en:
       bulletins:
         index:
           title: Bulletins
-          show: Show
+        destroy:
+          destroyed: The bulletin has been successfully deleted.
       categories:
         index:
           title: Categories
           new: Add category
-          edit: Edit
-          destroy: Destroy
         edit:
           edit: Edit the category
         new:

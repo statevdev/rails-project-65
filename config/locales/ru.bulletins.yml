@@ -3,3 +3,7 @@ ru:
     bulletins:
       show:
         all: Все объявления
+      index:
+        title: Объявления
+      new:
+        title: Добавить объявление

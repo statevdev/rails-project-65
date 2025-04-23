@@ -11,3 +11,6 @@ jobs:
 
 animals:
   name: Animals
+
+without_bulletins:
+  name: Estate

@@ -1,5 +1,6 @@
 en:
   success: Success!
   destroy_confirmation: Are you sure?
+  show: Show
   edit: Edit
   destroy: Destroy

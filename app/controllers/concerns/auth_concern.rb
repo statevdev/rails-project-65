@@ -4,9 +4,23 @@ module AuthConcern
   extend ActiveSupport::Concern
 
   def user_not_authorized
+    authenticate_user!
+    return unless signed_in?
+
+    authenticate_admin!
+  end
+
+  def authenticate_user!
     return if signed_in?
 
     flash[:alert] = t('not_auth')
+    redirect_to root_path
+  end
+
+  def authenticate_admin!
+    return if current_user.admin?
+
+    flash[:alert] = t('not_auth_admin')
     redirect_to root_path
   end
 

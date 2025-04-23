@@ -10,6 +10,9 @@ en:
     buttons:
       bulletin:
         new: Create bulletin
+      category:
+        new: Create category
+        update: Update category
     # Examples
     # labels:
     #   defaults:
