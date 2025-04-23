@@ -1,13 +1,27 @@
-.container.content style='word-wrap: break-word;'
-  .border style='border: 1px solid #ccc; border-radius: 10px; padding: 10px; margin-bottom: 20px;'
-    ol.breadcrumb
-      li.breadcrumb-item
-        = link_to t('.all'), bulletins_path
-      li.breadcrumb-item.active
-        = @bulletin.category.name
+= content_for :title do
+  = @bulletin.title
 
-    h1 = @bulletin.title
-    p = simple_format(@bulletin.description)
+ol.breadcrumb
+  li.breadcrumb-item
+    = link_to t('.all'), bulletins_path
+  li.breadcrumb-item.active
+    = @bulletin.category.name
 
-    - if @bulletin.image_attachment
-      = image_tag(@bulletin.image, class: 'img-fluid')
+.card.mb-3
+  .row.g-0
+    .col-md-4
+      - if @bulletin.image_attachment
+        = image_tag @bulletin.image, class: 'img-fluid rounded-start'
+    .col-md-8.d-flex.flex-column
+      .card-body.d-flex.flex-column
+        h4.card-title.flex-grow-1
+          = @bulletin.title
+        p.card-text.flex-grow-1
+          = @bulletin.description
+        small.card-footer.text-muted
+          = @bulletin.user.email
+
+
+
+
+

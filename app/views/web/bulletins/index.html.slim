@@ -1,13 +1,15 @@
 = content_for :title do
   = t('.title')
   
-.container.content style='word-wrap: break-word;'
+.row.row-cols-1.row-cols-md-4.g-4
   - @bulletins.each do |bulletin|
-    .border style='border: 1px solid #ccc; border-radius: 10px; padding: 10px; margin-bottom: 20px;'
-      h3
-        =< link_to bulletin.title, bulletin, style: 'text-decoration: none; color: black;'
-      p
-        =< simple_format(truncate(bulletin.description, length: 200, omission: '...'))
-      small
-        =< bulletin.user.email
-
+    .col
+      .card.h-100.d-flex.flex-column
+        - if bulletin.image_attachment
+          = image_tag bulletin.image, class: 'img-thumbnail', style: 'height: 200px; object-fit: cover;'
+        .card-body.d-flex.flex-column
+          h4.card-title.flex-grow-1
+            = link_to truncate(bulletin.title), bulletin
+          small.card-footer
+            .text-muted
+              = bulletin.user.email
