@@ -7,3 +7,9 @@ en:
         title: Bulletins
       new:
         title: Add bulletin
+      edit:
+        title: Edit bulletin
+      to_moderate:
+        success: Submitted for moderation!
+      archive:
+        success: Bulletin is archived!

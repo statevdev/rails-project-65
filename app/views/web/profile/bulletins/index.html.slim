@@ -1,6 +1,8 @@
 = content_for :title do
   = t('.title')
 
+= link_to t('.new'), new_bulletin_path, class: 'btn btn-outline-primary me-2'
+
 table.table.mb-5
   thead
     tr
@@ -18,6 +20,11 @@ table.table.mb-5
 
         td.d-flex
           = link_to t('show'), bulletin, class: 'me-4'
+          = link_to t('edit'), edit_bulletin_path(bulletin), class: 'me-4'
+          - if bulletin.draft?
+            = link_to t('to_moderate'), to_moderate_bulletin_path(bulletin),
+              class:'me-4', data: { turbo_method: :patch, turbo_confirm: t('confirmation') }
           - unless bulletin.archived?
-            = link_to t('archive'), archive_admin_bulletin_path(bulletin),
+            = link_to t('archive'), archive_bulletin_path(bulletin),
               class: 'link-danger me-4', data: { turbo_method: :patch, turbo_confirm: t('confirmation') }
+        

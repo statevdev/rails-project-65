@@ -8,12 +8,29 @@ Rails.application.routes.draw do
     get 'auth/:provider/callback', to: 'auth#callback', as: :callback_auth
     delete 'auth/destroy', to: 'auth#destroy', as: :sign_out
 
-    resources :bulletins, only: %i[index show new create]
+    resources :bulletins do
+      member do
+        patch :archive
+        patch :to_moderate
+      end
+    end
+
+    scope module: :profile do
+      get 'profile', to: 'bulletins#index'
+    end
 
     namespace :admin do
-      root 'bulletins#index'
-      resources :categories
-      resources :bulletins, only: %i[index show destroy]
+      root 'bulletins#under_moderation'
+
+      resources :categories, except: :show
+
+      resources :bulletins, only: %i[index destroy] do
+        member do
+          patch :publish
+          patch :archive
+          patch :reject
+        end
+      end
     end
   end
 end

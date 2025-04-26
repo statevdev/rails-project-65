@@ -5,6 +5,10 @@ class BulletinPolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    true
+  end
+
   def new?
     user
   end
@@ -13,7 +17,19 @@ class BulletinPolicy < ApplicationPolicy
     user
   end
 
-  def show?
-    true
+  def edit?
+    user&.admin? || record.user_id == user&.id
+  end
+
+  def update?
+    user&.admin? || record.user_id == user&.id
+  end
+
+  def to_moderate?
+    user&.admin? || record.user_id == user&.id
+  end
+
+  def archive?
+    user&.admin? || record.user_id == user&.id
   end
 end

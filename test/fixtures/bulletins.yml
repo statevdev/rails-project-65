@@ -5,45 +5,53 @@ blue_bike:
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: user
   category: items
+  state: draft
 
 dentist:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: user
   category: jobs
+  state: draft
 
 fennec:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: user
   category: animals
+  state: draft
 
 editor:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: user
   category: jobs
+  state: draft
 
 panda:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: admin
   category: animals
+  state: draft
 
 red_bike:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: admin
   category: items
+  state: draft
 
 red_bus:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: admin
   category: transports
+  state: draft
 
 soviet_bus:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: admin
   category: transports
+  state: draft

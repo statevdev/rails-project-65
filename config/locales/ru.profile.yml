@@ -1,0 +1,18 @@
+ru:
+  web:
+    profile:
+      bulletins:
+        index:
+          title: Мои объявления
+          cols:
+            title: Название
+            state: Состояние
+            created_at: Дата создания
+            actions: Действия
+          states:
+            published: Опубликовано
+            archived: В архиве
+            rejected: Отклонено
+            under_moderation: На модерации
+            draft: Черновик
+          new: Добавить объявление

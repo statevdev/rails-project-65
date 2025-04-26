@@ -1,0 +1,23 @@
+= content_for :title do
+  = t('.title')
+
+table.table.mb-5
+  thead
+    tr
+      th{ scope = 'col' } = t('.cols.title')
+      th{ scope = 'col' } = t('.cols.created_at')
+      th{ scope = 'col' } = t('.cols.actions')
+
+  tbody
+    - @bulletins.each do |bulletin|
+      tr
+        td = link_to bulletin.title, bulletin
+        td = bulletin.created_at.strftime("%d.%m.%Y, %H:%M")
+
+        td.d-flex
+          = link_to t('publish'), publish_admin_bulletin_path(bulletin),
+            class: 'me-4', data: { turbo_method: :patch, turbo_confirm: t('confirmation') }
+          = link_to t('reject'), reject_admin_bulletin_path(bulletin),
+            class: 'me-4', data: { turbo_method: :patch, turbo_confirm: t('confirmation') }
+          = link_to t('archive'), archive_admin_bulletin_path(bulletin),
+            class: 'link-danger me-4', data: { turbo_method: :patch, turbo_confirm: t('confirmation') }

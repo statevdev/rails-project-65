@@ -1,0 +1,20 @@
+en:
+  web:
+    profile:
+      bulletins:
+        index:
+          title: My bulletins
+          cols:
+            title: Title
+            state: State
+            created_at: Created at
+            actions: Actions
+          states:
+            published: Published
+            archived: Archived
+            rejected: Rejected
+            under_moderation: Under moderation
+            draft: Draft
+          new: Add bulletin
+
+        

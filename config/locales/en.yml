@@ -1,6 +1,10 @@
 en:
   success: Success!
-  destroy_confirmation: Are you sure?
+  confirmation: Are you sure?
   show: Show
   edit: Edit
   destroy: Destroy
+  to_moderate: To moderate
+  archive: Archive
+  publish: Publish
+  reject: Reject

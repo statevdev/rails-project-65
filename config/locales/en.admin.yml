@@ -3,22 +3,47 @@ en:
     admin:
       bulletins:
         index:
-          title: Bulletins
+          title: All bulletins
+          cols:
+            title: Title
+            state: State
+            created_at: Created at
+            actions: Actions
+          states:
+            published: Published
+            archived: Archived
+            rejected: Rejected
+            under_moderation: Under moderation
+            draft: Draft
+        under_moderation:
+          title: Bulletins on moderation
+          cols:
+            title: Title
+            created_at: Created at
+            actions: Actions
+        reject:
+          success: Bulletin is rejected!
+        publish:
+          success: Bulletin is published!
+        archive:
+          success: Bulletin is archived!
         destroy:
           destroyed: The bulletin has been successfully deleted.
       categories:
         index:
           title: Categories
           new: Add category
+          cols:
+            id: ID
+            title: Title
+            actions: Actions
         edit:
           edit: Edit the category
         new:
           new: New category
-        create:
-          fail: Failed to create a category.
         destroy:
           destroy_has_bulletins: This category has related bulletins.
           destroyed: The category has been successfully deleted.
         update:
           updated: Successfully updated!
-          fail: Failed to update the category.
+          

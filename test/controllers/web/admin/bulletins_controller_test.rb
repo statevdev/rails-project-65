@@ -10,7 +10,7 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
     sign_in @admin
     get admin_bulletins_path
     assert_response :success
-    assert_select 'h2', 'Bulletins'
+    assert_select 'h2', 'All bulletins'
   end
 
   test 'destroy one bulletin by admin' do

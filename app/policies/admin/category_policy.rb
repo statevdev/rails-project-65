@@ -5,14 +5,6 @@ class Admin::CategoryPolicy < ApplicationPolicy
     user&.admin?
   end
 
-  def show?
-    user&.admin?
-  end
-
-  def destroy?
-    user&.admin?
-  end
-
   def new?
     user&.admin?
   end
@@ -26,6 +18,10 @@ class Admin::CategoryPolicy < ApplicationPolicy
   end
 
   def update?
+    user&.admin?
+  end
+
+  def destroy?
     user&.admin?
   end
 end

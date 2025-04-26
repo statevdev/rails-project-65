@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 
 ruby '3.2.2'
 
+gem 'aasm'
+
 gem 'aws-sdk-s3'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

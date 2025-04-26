@@ -11,6 +11,7 @@ ru:
           sign_out: Выйти
           sign_in: Войти
           admin: Админка
+          profile: Мои объявления
       admin:
         application:
           title: Доска объявлений

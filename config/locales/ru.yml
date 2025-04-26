@@ -1,6 +1,10 @@
 ru:
   success: Успешно!
-  destroy_confirmation: Вы уверены?
+  confirmation: Вы уверены?
   show: Показать
   edit: Редактировать
   destroy: Удалить
+  to_moderate: На модерацию
+  archive: Архивировать
+  publish: Опубликовать
+  reject: Отклонить

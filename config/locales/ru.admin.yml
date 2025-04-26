@@ -3,22 +3,46 @@ ru:
     admin:
       bulletins:
         index:
-          title: Объявления
+          title: Все объявления
+          cols:
+            title: Название
+            state: Состояние
+            created_at: Дата создания
+            actions: Действия
+          states:
+            published: Опубликовано
+            archived: В архиве
+            rejected: Отклонено
+            under_moderation: На модерации
+            draft: Черновик
+        under_moderation:
+          title: Объявления на модерации
+          cols:
+            title: Название
+            created_at: Дата создания
+            actions: Действия
+        reject:
+          success: Объявление возвращено!
+        publish:
+          success: Объявление опубликовано!
+        archive:
+          success: Объявление архивировано!
         destroy:
           destroyed: Объявление успешно удалено.
       categories:
         index:
           title: Категории
           new: Добавить категорию
+          cols:
+            id: ID
+            title: Название
+            actions: Действия
         edit:
           edit: Редактировать категорию
         new:
           new: Новая категория
-        create:
-          fail: Ошибка при создании категории.
         destroy:
           destroy_has_bulletins: Эта категория имеет связанные объявления.
           destroyed: Категория успешно удалена.
         update:
           updated: Успешно обновлено!
-          fail: Ошибка при обновлении категории.

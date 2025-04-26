@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
 class Web::Admin::CategoriesController < Web::Admin::ApplicationController
-  before_action :set_category, only: %i[show edit update destroy]
+  before_action :set_category, only: %i[edit update destroy]
 
   def index
     @categories = Category.includes(:bulletins).order(created_at: :desc)
     authorize [:admin, @categories]
   end
-
-  def show; end
 
   def new
     @category = Category.new
@@ -24,7 +22,6 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
     if @category.save
       redirect_to %i[admin categories], notice: t('success')
     else
-      flash[:alert] = t('.fail')
       render :new, status: :unprocessable_entity
     end
   end
@@ -33,7 +30,6 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
     if @category.update(categories_params)
       redirect_to %i[admin categories], notice: t('.updated')
     else
-      flash[:alert] = t('fail')
       render :edit, status: :unprocessable_entity
     end
   end

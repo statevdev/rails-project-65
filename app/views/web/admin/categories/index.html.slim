@@ -3,25 +3,19 @@
 
 = link_to t('.new'), new_admin_category_path, class: 'btn btn-outline-primary me-2'
 
-table.table.table-striped.table-hover.mb-5
+table.table.mb-5
   thead
     tr
-      th{ scope = 'col' } #
-      th{ scope = 'col' } Title
-      th
+      th{ scope = 'col' } = t('.cols.id')
+      th{ scope = 'col' } = t('.cols.title')
+      th{ scope = 'col' } = t('.cols.actions')
 
   tbody
-    - @categories.each_with_index do |category, i|
+    - @categories.each do |category|
       tr
-        th{ scope = 'row' } = i + 1
+        td = category.id
         td = category.name
         td.d-flex
           = link_to t('edit'), edit_admin_category_path(category), class: 'me-4'
-          = link_to t('destroy'), admin_category_path(category),
-            data: { turbo_method: :delete, turbo_confirm: t('destroy_confirmation') },
-            class: 'link-danger'
-
-
-
-
-
+          = link_to t('destroy'), admin_category_path(category), class: 'link-danger me-4',
+            data: { turbo_method: :delete, turbo_confirm: t('confirmation') }

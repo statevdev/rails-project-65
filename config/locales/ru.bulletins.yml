@@ -7,3 +7,9 @@ ru:
         title: Объявления
       new:
         title: Добавить объявление
+      edit:
+        title: Редактировать объявление
+      to_moderate:
+        success: Отправлено на модерацию!
+      archive:
+        success: Отправлено в архив!
