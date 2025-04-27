@@ -35,4 +35,8 @@ class Bulletin < ApplicationRecord
       transitions from: %i[published under_moderation rejected draft], to: :archived
     end
   end
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[title state category_id]
+  end
 end

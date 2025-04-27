@@ -4,7 +4,8 @@ class Web::BulletinsController < Web::ApplicationController
   before_action :set_bulletin, except: %i[index new create]
 
   def index
-    @bulletins = Bulletin.published.includes(:category, :user).order(created_at: :desc)
+    @q = Bulletin.published.ransack(params[:q])
+    @bulletins = @q.result.includes(:category, :user).order(created_at: :desc).page(params[:page])
     authorize @bulletins
   end
 

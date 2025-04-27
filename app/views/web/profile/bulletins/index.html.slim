@@ -1,7 +1,18 @@
 = content_for :title do
   = t('.title')
 
-= link_to t('.new'), new_bulletin_path, class: 'btn btn-outline-primary me-2'
+= link_to t('.new'), new_bulletin_path, class: 'btn btn-outline-primary mb-4'
+
+.p-3.bg-light.mb-3
+  = search_form_for @q, url: profile_path do |f|
+    .row.my-2
+      .col-5
+        = f.input :title_cont, label: false, placeholder: 'Искать по названию'
+      .col-4
+        = f.input :state_eq, as: :select, collection: Bulletin.aasm.states.map(&:name), label: false, prompt: 'По состоянию'
+      .col-3
+        = f.submit 'Поиск', class: 'btn btn-primary me-2'
+        = link_to 'Сбросить', url_for, class: 'btn btn-outline-primary'
 
 table.table.mb-5
   thead
@@ -27,4 +38,7 @@ table.table.mb-5
           - unless bulletin.archived?
             = link_to t('archive'), archive_bulletin_path(bulletin),
               class: 'link-danger me-4', data: { turbo_method: :patch, turbo_confirm: t('confirmation') }
+
+.d-flex.justify-content-center.mt-3
+  = paginate @bulletins
         

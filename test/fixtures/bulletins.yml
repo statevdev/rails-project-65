@@ -12,46 +12,46 @@ dentist:
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: user
   category: jobs
-  state: draft
+  state: archived
 
 fennec:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: user
   category: animals
-  state: draft
+  state: under_moderation
 
 editor:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: user
   category: jobs
-  state: draft
+  state: under_moderation
 
 panda:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: admin
   category: animals
-  state: draft
+  state: rejected
 
 red_bike:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: admin
   category: items
-  state: draft
+  state: rejected
 
 red_bus:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: admin
   category: transports
-  state: draft
+  state: published
 
 soviet_bus:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
   user: admin
   category: transports
-  state: draft
+  state: published

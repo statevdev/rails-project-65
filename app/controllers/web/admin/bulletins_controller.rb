@@ -4,12 +4,13 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   before_action :set_bulletin, except: %i[index under_moderation]
 
   def index
-    @bulletins = Bulletin.includes(:category, :user).order(created_at: :desc)
+    @q = Bulletin.ransack(params[:q])
+    @bulletins = @q.result.includes(:category, :user).order(created_at: :desc).page(params[:page])
     authorize [:admin, @bulletins]
   end
 
   def under_moderation
-    @bulletins = Bulletin.under_moderation.includes(:category, :user).order(created_at: :desc)
+    @bulletins = Bulletin.under_moderation.includes(:category, :user).order(created_at: :desc).page(params[:page])
     authorize [:admin, @bulletins]
   end
 

@@ -4,6 +4,7 @@ class Web::Profile::BulletinsController < Web::Profile::ApplicationController
   def index
     raise Pundit::NotAuthorizedError unless current_user
 
-    @bulletins = current_user.bulletins
+    @q = current_user.bulletins.ransack(params[:q])
+    @bulletins = @q.result.page(params[:page])
   end
 end

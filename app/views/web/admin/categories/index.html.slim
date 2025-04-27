@@ -19,3 +19,6 @@ table.table.mb-5
           = link_to t('edit'), edit_admin_category_path(category), class: 'me-4'
           = link_to t('destroy'), admin_category_path(category), class: 'link-danger me-4',
             data: { turbo_method: :delete, turbo_confirm: t('confirmation') }
+
+.d-flex.justify-content-center.mt-3
+  = paginate @categories

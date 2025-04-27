@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
       resources :categories, except: :show
 
-      resources :bulletins, only: %i[index destroy] do
+      resources :bulletins, only: :index do
         member do
           patch :publish
           patch :archive

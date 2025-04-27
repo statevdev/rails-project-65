@@ -4,7 +4,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
   before_action :set_category, only: %i[edit update destroy]
 
   def index
-    @categories = Category.includes(:bulletins).order(created_at: :desc)
+    @categories = Category.includes(:bulletins).order(created_at: :desc).page(params[:page])
     authorize [:admin, @categories]
   end
 

@@ -21,3 +21,6 @@ table.table.mb-5
             class: 'me-4', data: { turbo_method: :patch, turbo_confirm: t('confirmation') }
           = link_to t('archive'), archive_admin_bulletin_path(bulletin),
             class: 'link-danger me-4', data: { turbo_method: :patch, turbo_confirm: t('confirmation') }
+
+.d-flex.justify-content-center.mt-3
+  = paginate @bulletins

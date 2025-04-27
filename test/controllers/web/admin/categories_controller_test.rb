@@ -3,25 +3,25 @@
 class Web::Admin::CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @admin = users(:admin)
-    @category = categories.sample
+    @category = categories(:transports)
     @category_without_bulletins = categories(:without_bulletins)
     @category_attrs = { name: Faker::Lorem.sentence }
   end
 
-  test 'get all categories for admin' do
+  test 'get all categories' do
     sign_in @admin
     get admin_categories_path
     assert_response :success
     assert_select 'h2', 'Categories'
   end
 
-  test 'get category form for admin' do
+  test 'get category form' do
     sign_in @admin
     get new_admin_category_path
     assert_response :success
   end
 
-  test 'get created category for admin' do
+  test 'get created category' do
     sign_in @admin
     post admin_categories_path, params: { category: @category_attrs }
 
@@ -33,14 +33,14 @@ class Web::Admin::CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert created_category
   end
 
-  test 'get edit category form for admin' do
+  test 'get edit category form' do
     sign_in @admin
     get edit_admin_category_path(@category)
     assert_response :success
     assert_select 'h2', 'Edit the category'
   end
 
-  test 'get updated category for admin' do
+  test 'get updated category' do
     sign_in @admin
     patch admin_category_path(@category), params: { category: @category_attrs }
 
@@ -51,7 +51,7 @@ class Web::Admin::CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert_equal @category.name, @category_attrs[:name]
   end
 
-  test 'destroy category related with bulletins by admin' do
+  test 'destroy category related with bulletins' do
     sign_in @admin
     delete admin_category_path(@category)
 
@@ -59,7 +59,7 @@ class Web::Admin::CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert_equal 'This category has related bulletins.', flash[:alert]
   end
 
-  test 'destroy category without bulletins by admin' do
+  test 'destroy category without bulletins' do
     sign_in @admin
     delete admin_category_path(@category_without_bulletins)
 
