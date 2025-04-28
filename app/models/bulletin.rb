@@ -9,7 +9,7 @@ class Bulletin < ApplicationRecord
   has_one_attached :image
 
   validates :title, presence: true, length: { minimum: 4, maximum: 50 }
-  validates :description, presence: true, length: { minimum: 100, maximum: 1000 }
+  validates :description, presence: true, length: { minimum: 10, maximum: 1000 }
   validates :image,
             attached: true,
             content_type: ['image/png', 'image/jpeg'],
