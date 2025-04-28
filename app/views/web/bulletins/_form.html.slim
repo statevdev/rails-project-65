@@ -5,10 +5,6 @@
   = f.input :title
   = f.association :category, required: true
   = f.input :description
-
-  - if bulletin.persisted? && bulletin.image.attached?
-    / = image_tag url_for(bulletin.image), class: 'img-thumbnail mb-2', style: 'max-width: 200px; display: block;'
-  - else
-    = f.input :image, as: :file, required: true
+  = f.input :image, as: :file, required: true
 
   = f.button :submit, text, class: 'btn btn-primary'
