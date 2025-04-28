@@ -6,7 +6,7 @@ class BulletinPolicy < ApplicationPolicy
   end
 
   def show?
-    record.published?
+    record.published? || user&.admin? || record.user_id == user&.id
   end
 
   def new?
