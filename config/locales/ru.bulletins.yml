@@ -13,3 +13,9 @@ ru:
         success: Отправлено на модерацию!
       archive:
         success: Отправлено в архив!
+      states:
+        published: Опубликовано
+        archived: В архиве
+        rejected: Отклонено
+        under_moderation: На модерации
+        draft: Черновик

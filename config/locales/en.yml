@@ -8,3 +8,9 @@ en:
   archive: Archive
   publish: Publish
   reject: Reject
+  views:
+    pagination:
+      first: ...
+      previous: Back
+      next: Next
+      last: Last

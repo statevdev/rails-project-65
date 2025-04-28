@@ -14,3 +14,13 @@ ru:
       category:
         new: Создать категорию
         update: Обновить категорию
+    ransack:
+      search: Поиск
+      reset: Сбросить
+      placeholders:
+        title: Искать по названию
+      prompts:
+        category: По категории
+        state: По состоянию
+
+

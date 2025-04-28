@@ -8,3 +8,9 @@ ru:
   archive: Архивировать
   publish: Опубликовать
   reject: Отклонить
+  views:
+    pagination:
+      first: ...
+      previous: Назад
+      next: Далее
+      last: Назад

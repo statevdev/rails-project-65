@@ -13,3 +13,9 @@ en:
         success: Submitted for moderation!
       archive:
         success: Bulletin is archived!
+      states:
+        published: Published
+        archived: Archived
+        rejected: Rejected
+        under_moderation: Under moderation
+        draft: Draft

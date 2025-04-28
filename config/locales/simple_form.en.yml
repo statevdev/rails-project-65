@@ -14,3 +14,12 @@ en:
       category:
         new: Create category
         update: Update category
+    ransack:
+      search: Search
+      reset: Reset
+      placeholders:
+        title: Title search
+      prompts:
+        category: By category
+        state: By state
+

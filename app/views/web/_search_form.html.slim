@@ -1,0 +1,10 @@
+.p-3.bg-light.mb-3
+  = search_form_for q, url: do |f|
+    .row.my-2
+      .col-5
+        = f.input cont, label: false, placeholder:
+      .col-4
+        = f.input eq, as: :select, collection: , label: false, prompt:
+      .col-3
+        = f.submit t('simple_form.ransack.search'), class: 'btn btn-primary me-2'
+        = link_to t('simple_form.ransack.reset'), url_for, class: 'btn btn-outline-primary'
