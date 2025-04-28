@@ -27,18 +27,17 @@ table.table.mb-5
       tr
         td = bulletin.title
         td = t(".states.#{bulletin.state}")
-        td = bulletin.created_at.strftime("%d.%m.%Y, %H:%M")
+        td = bulletin.created_at.strftime('%d.%m.%Y, %H:%M')
 
         td.d-flex
           = link_to t('show'), bulletin, class: 'me-4'
           = link_to t('edit'), edit_bulletin_path(bulletin), class: 'me-4'
           - if bulletin.draft?
             = link_to t('to_moderate'), to_moderate_bulletin_path(bulletin),
-              class:'me-4', data: { turbo_method: :patch, turbo_confirm: t('confirmation') }
+              class: 'me-4', data: { turbo_method: :patch, turbo_confirm: t('confirmation') }
           - unless bulletin.archived?
             = link_to t('archive'), archive_bulletin_path(bulletin),
               class: 'link-danger me-4', data: { turbo_method: :patch, turbo_confirm: t('confirmation') }
 
 .d-flex.justify-content-center.mt-3
   = paginate @bulletins
-        

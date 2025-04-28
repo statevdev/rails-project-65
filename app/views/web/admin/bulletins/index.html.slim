@@ -25,7 +25,7 @@ table.table.mb-5
       tr
         td = bulletin.title
         td = t(".states.#{bulletin.state}")
-        td = bulletin.created_at.strftime("%d.%m.%Y, %H:%M")
+        td = bulletin.created_at.strftime('%d.%m.%Y, %H:%M')
 
         td.d-flex
           = link_to t('show'), bulletin, class: 'me-4'
