@@ -68,12 +68,12 @@ class Web::Admin::CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert_equal 'The category has been successfully deleted.', flash[:notice]
   end
 
-  # test 'not authorize action' do
-  #   @user = users(:user)
-  #   sign_in @user
-  #   get admin_categories_path
+  test 'not authorize action' do
+    @user = users(:user)
+    sign_in @user
+    get admin_categories_path
 
-  #   assert_redirected_to root_path
-  #   assert_equal 'This section is for admins only.', flash[:alert]
-  # end
+    assert_redirected_to root_path
+    assert_equal 'This section is for admins only.', flash[:alert]
+  end
 end

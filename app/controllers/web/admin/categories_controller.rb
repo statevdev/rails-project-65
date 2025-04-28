@@ -5,19 +5,19 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
 
   def index
     @categories = Category.includes(:bulletins).order(created_at: :desc).page(params[:page])
-    # authorize [:admin, @categories]
+    authorize [:admin, @categories]
   end
 
   def new
     @category = Category.new
-    # authorize [:admin, @category]
+    authorize [:admin, @category]
   end
 
   def edit; end
 
   def create
     @category = Category.new(categories_params)
-    # authorize [:admin, @category]
+    authorize [:admin, @category]
 
     if @category.save
       redirect_to %i[admin categories], notice: t('success')
@@ -48,7 +48,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
 
   def set_category
     @category = Category.find(params[:id])
-    # authorize [:admin, @category]
+    authorize [:admin, @category]
   end
 
   def categories_params
