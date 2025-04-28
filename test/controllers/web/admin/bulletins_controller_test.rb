@@ -9,7 +9,7 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
   test 'get all bulletins' do
     sign_in @admin
     get admin_bulletins_path
-    
+
     assert_response :success
     assert_select 'h2', 'All bulletins'
   end

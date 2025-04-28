@@ -4,7 +4,7 @@ class Web::Profile::BulletinsControllerTest < ActionDispatch::IntegrationTest
   test 'get profile' do
     @user = users(:user)
 
-    sign_in @user 
+    sign_in @user
 
     get profile_path
 

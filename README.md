@@ -2,7 +2,19 @@
 [![CI Status](https://github.com/statevdev/rails-project-64/actions/workflows/main.yml/badge.svg)](https://github.com/statevdev/rails-project-64/actions)
 
 # Bulletin board
-This application is a simple site-board /to be continued later/
+This application it's a simple bulletin board, where users can post yours bulletins.
+
+## Features:
+- Github powered authorization and authentication 
+  - omniauth
+- Search forms
+  - ransack & simple_form
+- Pagination
+  - kaminari
+- Access control with admin panel
+  - pundit
+- Internationalization (en; ru)
+  - i18n
 
 ## Application link:
 https://rails-project-65-5diz.onrender.com
