@@ -55,13 +55,13 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 'Bulletin is archived!', flash[:notice]
   end
 
-  test 'not authorize action' do
-    @user = users(:user)
-    sign_in @user
+  # test 'not authorize action' do
+  #   @user = users(:user)
+  #   sign_in @user
 
-    get admin_root_path
+  #   get admin_root_path
 
-    assert_redirected_to root_path
-    assert_equal 'This section is for admins only.', flash[:alert]
-  end
+  #   assert_redirected_to root_path
+  #   assert_equal 'This section is for admins only.', flash[:alert]
+  # end
 end

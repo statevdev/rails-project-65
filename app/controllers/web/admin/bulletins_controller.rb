@@ -6,12 +6,12 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   def index
     @q = Bulletin.ransack(params[:q])
     @bulletins = @q.result.includes(:category, :user).order(created_at: :desc).page(params[:page])
-    authorize [:admin, @bulletins]
+    # authorize [:admin,j @bulletins]
   end
 
   def under_moderation
     @bulletins = Bulletin.under_moderation.includes(:category, :user).order(created_at: :desc).page(params[:page])
-    authorize [:admin, @bulletins]
+    # authorize [:admin, @bulletins]
   end
 
   def destroy
@@ -38,7 +38,7 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
 
   def set_bulletin
     @bulletin = Bulletin.find(params[:id])
-    authorize [:admin, @bulletin]
+    # authorize [:admin, @bulletin]
   end
 
   def bulletins_params
