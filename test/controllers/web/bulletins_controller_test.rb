@@ -3,6 +3,7 @@
 class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:user)
+    @published_bulletin = bulletins(:red_bus)
     @draft_bulletin = bulletins(:blue_bike)
 
     @bulletin_attrs = {
@@ -15,12 +16,14 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'get all bulletins' do
+    sign_in @user
     get root_path
     assert_response :success
   end
 
   test 'show bulletin' do
-    get bulletin_path(@draft_bulletin)
+    sign_in @user
+    get bulletin_path(@published_bulletin)
     assert_response :success
   end
 
@@ -35,6 +38,9 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
 
     post bulletins_path, params: { bulletin: @bulletin_attrs }
 
+    bulletin = Bulletin.find_by(title: @bulletin_attrs[:title])
+
+    assert bulletin
     assert_redirected_to bulletin_path(Bulletin.last)
     assert_equal 'Success!', flash[:notice]
   end
@@ -42,7 +48,7 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
   test 'get edit bulletin form' do
     sign_in(@user)
 
-    get edit_bulletin_path(@draft_bulletin)
+    get edit_bulletin_path(@published_bulletin)
     assert_response :success
     assert_select 'h2', 'Edit bulletin'
   end
@@ -50,13 +56,13 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
   test 'get updated bulletin' do
     sign_in(@user)
 
-    patch bulletin_path(@draft_bulletin), params: { bulletin: @bulletin_attrs }
+    patch bulletin_path(@published_bulletin), params: { bulletin: @bulletin_attrs }
 
-    @draft_bulletin.reload
+    @published_bulletin.reload
 
     assert_redirected_to profile_path
     assert_equal 'Success!', flash[:notice]
-    assert_equal @draft_bulletin.title, @bulletin_attrs[:title]
+    assert_equal @published_bulletin.title, @bulletin_attrs[:title]
   end
 
   test 'to moderate bulletin' do

@@ -45,7 +45,7 @@ red_bike:
 red_bus:
   title: <%= Faker::Lorem.sentence %>
   description: <%= Faker::Lorem.paragraphs(number: 5) %>
-  user: admin
+  user: user
   category: transports
   state: published
 
