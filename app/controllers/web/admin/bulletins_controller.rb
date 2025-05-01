@@ -20,18 +20,33 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   end
 
   def publish
-    @bulletin.publish!
-    redirect_to admin_root_path, notice: t('.success')
+    if @bulletin.may_publish?
+      @bulletin.publish!
+
+      redirect_to admin_root_path, notice: t('.success')
+    else
+      redirect_to admin_root_path, notice: t('failure')
+    end
   end
 
   def reject
-    @bulletin.reject!
-    redirect_to admin_root_path, notice: t('.success')
+    if @bulletin.may_reject?
+      @bulletin.reject!
+
+      redirect_to admin_root_path, notice: t('.success')
+    else
+      redirect_to admin_root_path, notice: t('failure')
+    end
   end
 
   def archive
-    @bulletin.archive!
-    redirect_back(fallback_location: admin_bulletins_path, notice: t('.success'))
+    if @bulletin.may_archive?
+      @bulletin.archive!
+
+      redirect_back(fallback_location: admin_bulletins_path, notice: t('.success'))
+    else
+      redirect_back(fallback_location: admin_bulletins_path, notice: t('failure'))
+    end
   end
 
   private

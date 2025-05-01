@@ -38,13 +38,23 @@ class Web::BulletinsController < Web::ApplicationController
   end
 
   def to_moderate
-    @bulletin.to_moderate!
-    redirect_to profile_path, notice: t('.success')
+    if @bulletin.may_to_moderate?
+      @bulletin.to_moderate!
+
+      redirect_to profile_path, notice: t('.success')
+    else
+      redirect_to profile_path, alert: t('failure')
+    end
   end
 
   def archive
-    @bulletin.archive!
-    redirect_to profile_path, notice: t('.success')
+    if @bulletin.may_archive?
+      @bulletin.archive!
+
+      redirect_to profile_path, notice: t('.success')
+    else
+      redirect_to profile_path, alert: t('failure')
+    end
   end
 
   private
